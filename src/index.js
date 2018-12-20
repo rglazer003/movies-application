@@ -7,7 +7,8 @@ sayHello('World');
 /**
  * require style imports
  */
-const {getMovies} = require('./api.js');
+const {getMovies, addMovies} = require('./api.js');
+
 const $ = require('jquery');
 
 getMovies().then((movies) => {
@@ -17,7 +18,25 @@ getMovies().then((movies) => {
     $('.container').append(`<h1>${id} ${title} ${rating}</h1>`)
   });
   $('#loading').addClass('hidden');
+  $('#add-movie').removeClass('hidden')
 }).catch((error) => {
   alert('Oh no! Something went wrong.\nCheck the console for details.')
   console.log(error);
 });
+
+$('#add').on('click', function(e) {
+  e.preventDefault();
+  let movieName = $('#movie-name').val();
+    console.log(movieName);
+  let rating = $('#rating').val();
+  let newMovie = {title: movieName, rating: rating};
+  console.log(newMovie);
+  addMovies(newMovie).then(function () {
+      console.log('It worked')
+  }).catch(function () {
+      console.log('Shit')
+  })
+});
+
+
+
