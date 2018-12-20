@@ -1,6 +1,6 @@
 module.exports = {
   getMovies: () => {
-    return fetch('/api/movies')
+    return fetch('http://localhost:1313/api/movies')
       .then(response => response.json());
   }
 };
