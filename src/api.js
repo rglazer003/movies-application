@@ -15,5 +15,13 @@ module.exports = {
           method: 'GET'
       })
           .then(data => data.json())
-  }
+  },
+  editMovie: (id, movie) => {
+    console.log(movie.id);
+    return fetch(`/api/movies/${id}`, {
+      method: 'PATCH', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(movie)
+    })
+
+    }
 };
+

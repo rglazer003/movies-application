@@ -7,7 +7,7 @@ sayHello('World');
 /**
  * require style imports
  */
-const {getMovies, addMovies, getMovie} = require('./api.js');
+const {getMovies, addMovies, getMovie, editMovie} = require('./api.js');
 
 const $ = require('jquery');
 
@@ -39,13 +39,25 @@ $('#add').on('click', function(e) {
   })
 });
 
+let id = 0;
 $('#submitId').on('click', function (e) {
   e.preventDefault();
-  let id = $('#editId').val();
+  id = $('#editId').val();
   getMovie(id).then((movie) => {
     console.log(movie);
     $('#searchResult').html(`<h3>${movie.title}</h3><h3>${movie.rating}</h3>`)
   })
+});
+
+$('#movie-submit').on('click', function(e) {
+  e.preventDefault();
+  let movieName = $('#editTitle').val();
+  let rating = $('#editRating').val();
+  let movieData = {title: movieName, rating: rating}
+  let editId = id
+  console.log(movieData);
+  editMovie(editId, movieData)
+      .then(console.log('It worked')).catch(console.log('Did not work'))
 });
 
 
