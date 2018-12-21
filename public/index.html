@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>My Application</title>
+    <title>Movies</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="/style.css"/>
 </head>
 <body>
@@ -16,13 +17,12 @@
             <input type="text" id="genre" placeholder="Genre">
             <br>
             <button id="add">Add Movie</button>
+            <br>
+            <br>
+            <input type="text" id="search" placeholder="Search by Title">
         </form>
     </div>
     <br>
-    <div class="container">
-        <div class="loading"></div>
-    </div>
-
     <div id="movieEdit" class="hidden">
         <input type="text" id="editId" placeholder="Enter ID of movie to edit">
         <button id="submitId">Submit</button>
@@ -38,9 +38,15 @@
         <input type="text" id="deleteId" placeholder="Enter ID of movie to delete">
         <button id="submitDelete">Delete</button>
     </form>
+    <br>
+    <div class="container">
+        <div class="loading"></div>
+    </div>
+
+
 </div>
 
-
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="/main.js"></script>
 </body>
 </html>

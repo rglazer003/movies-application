@@ -34,7 +34,7 @@ input {
     height: 120px;
     animation: spin 2s linear infinite;
     margin: auto;
-    margin-top: 50%;
+    margin-top: 300px;
 }
 
 @keyframes spin {
