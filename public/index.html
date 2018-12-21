@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/style.css"/>
 </head>
 <body>
+    <div id="holder">
     <div class="forms">
         <form class="forms hidden" id="add-movie">
             <input type="text" id="movie-name" placeholder="Movie Name">
@@ -20,16 +21,21 @@
         <h1 id="loading">Loading...</h1>
     </div>
     <div id="movieEdit" class="hidden">
-        <input type="text" id="editId">
+        <input type="text" id="editId" placeholder="Enter ID of movie to edit">
         <button id="submitId">Submit</button>
     </div>
     <h1 id="yourMovie" class="hidden">Here is the movie:</h1>
     <div id="searchResult"></div>
-    <form id="editForm">
-        <input type="text" id="editTitle">
-        <input type="text" id="editRating">
+    <form id="editForm" class="hidden">
+        <input type="text" id="editTitle" placeholder="Enter new title">
+        <input type="text" id="editRating" placeholder="Enter new rating">
         <button id="movie-submit">Submit Movie</button>
     </form>
+    <form id="deleteForm" class="hidden">
+        <input type="text" id="deleteId" placeholder="Enter ID of movie to delete">
+        <button id="submitDelete">Delete</button>
+    </form>
+    </div>
 
 
     <script src="/main.js"></script>

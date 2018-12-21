@@ -7,7 +7,7 @@ sayHello('World');
 /**
  * require style imports
  */
-const {getMovies, addMovies, getMovie, editMovie} = require('./api.js');
+const {getMovies, addMovies, getMovie, editMovie, deleteMovie} = require('./api.js');
 
 const $ = require('jquery');
 
@@ -19,7 +19,8 @@ getMovies().then((movies) => {
   });
   $('#loading').addClass('hidden');
   $('#add-movie').removeClass('hidden');
-  $('#movieEdit').removeClass('hidden')
+  $('#movieEdit').removeClass('hidden');
+  $('#deleteForm').removeClass('hidden');
 }).catch((error) => {
   alert('Oh no! Something went wrong.\nCheck the console for details.')
   console.log(error);
@@ -46,7 +47,8 @@ $('#submitId').on('click', function (e) {
   getMovie(id).then((movie) => {
     console.log(movie);
     $('#searchResult').html(`<h3>${movie.title}</h3><h3>${movie.rating}</h3>`)
-  })
+  });
+  $('#editForm').removeClass('hidden')
 });
 
 $('#movie-submit').on('click', function(e) {
@@ -60,5 +62,10 @@ $('#movie-submit').on('click', function(e) {
       .then(console.log('It worked')).catch(console.log('Did not work'))
 });
 
-
+$('#submitDelete').on('click', function (e) {
+  e.preventDefault();
+  let movieId = $('#deleteId').val();
+  console.log(movieId);
+  deleteMovie(movieId).then(console.log('It worked')).catch(console.log('Nope'))
+});
 
