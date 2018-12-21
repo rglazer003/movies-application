@@ -2,12 +2,12 @@ html, body {
     height: 100%;
 }
 
-.container {
-    position: relative;
-    top: 50%;
-    transform: translateY(-100%);
-    text-align: center;
-}
+/*.container {*/
+    /*position: relative;*/
+    /*top: 50%;*/
+    /*transform: translateY(-100%);*/
+    /*text-align: center;*/
+/*}*/
 
 .hidden {
     display: none;
@@ -15,9 +15,9 @@ html, body {
 
 
 
-.forms {
-    position: relative;
-    top: 50%;
-    transform: translateY(-100%);
-    text-align: center;
-}
+/*.forms {*/
+    /*position: relative;*/
+    /*top: 50%;*/
+    /*transform: translateY(-100%);*/
+    /*text-align: center;*/
+/*}*/

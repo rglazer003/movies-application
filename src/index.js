@@ -7,7 +7,7 @@ sayHello('World');
 /**
  * require style imports
  */
-const {getMovies, addMovies} = require('./api.js');
+const {getMovies, addMovies, getMovie} = require('./api.js');
 
 const $ = require('jquery');
 
@@ -18,7 +18,8 @@ getMovies().then((movies) => {
     $('.container').append(`<h1>${id} ${title} ${rating}</h1>`)
   });
   $('#loading').addClass('hidden');
-  $('#add-movie').removeClass('hidden')
+  $('#add-movie').removeClass('hidden');
+  $('#movieEdit').removeClass('hidden')
 }).catch((error) => {
   alert('Oh no! Something went wrong.\nCheck the console for details.')
   console.log(error);
@@ -35,6 +36,15 @@ $('#add').on('click', function(e) {
       console.log('It worked')
   }).catch(function () {
       console.log('Shit')
+  })
+});
+
+$('#submitId').on('click', function (e) {
+  e.preventDefault();
+  let id = $('#editId').val();
+  getMovie(id).then((movie) => {
+    console.log(movie);
+    $('#searchResult').html(`<h3>${movie.title}</h3><h3>${movie.rating}</h3>`)
   })
 });
 

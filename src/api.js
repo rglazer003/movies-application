@@ -8,6 +8,12 @@ module.exports = {
       return fetch('/api/movies', {
         method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(newMovie)
       })
-
+  },
+  getMovie : (id) =>  {
+      console.log(id);
+      return fetch (`/api/movies/${id}`, {
+          method: 'GET'
+      })
+          .then(data => data.json())
   }
 };

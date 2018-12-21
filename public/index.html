@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>My Application</title>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/style.css"/>
 </head>
 <body>
-
-    <div class="container">
-        <h1 id="loading">Loading...</h1>
-    </div>
     <div class="forms">
         <form class="forms hidden" id="add-movie">
             <input type="text" id="movie-name" placeholder="Movie Name">
@@ -19,6 +15,21 @@
             <button id="add">Add Movie</button>
         </form>
     </div>
+    <br>
+    <div class="container">
+        <h1 id="loading">Loading...</h1>
+    </div>
+    <div id="movieEdit" class="hidden">
+        <input type="text" id="editId">
+        <button id="submitId">Submit</button>
+    </div>
+    <h1 id="yourMovie" class="hidden">Here is the movie:</h1>
+    <div id="searchResult"></div>
+    <form id="editForm">
+        <input type="text" id="editTitle">
+        <input type="text" id="editRating">
+    </form>
+
 
     <script src="/main.js"></script>
 </body>
