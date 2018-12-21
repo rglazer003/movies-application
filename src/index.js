@@ -57,7 +57,7 @@ getMovies().then((movies) => {
     console.log('Here are all the movies:');
     movies.forEach(({title, rating, id, genre}) => {
         console.log(`id#${id} - ${title} - rating: ${rating}`);
-        $('.container').append(`<h1>ID: ${id}</h1><h1>Title: ${title}</h1><h1>Rating: ${rating}</h1><h1>Genre: ${genre}</h1><hr>`)
+        $('.deck').append(`<div class="card"><div><div class="card-header">${title}<ul class="list-group list-group-flush"><li>ID: ${id}</li><li>Title: ${title}</li><li>Rating: ${rating}</li><li>Genre: ${genre}</li></ul></div></div></div>`)
     });
     $('.loading').addClass('hidden');
     $('#add-movie').removeClass('hidden');
