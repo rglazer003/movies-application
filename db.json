@@ -11,6 +11,12 @@
       "rating": "5",
       "id": 2,
       "genre": "Action"
+    },
+    {
+      "title": "Creed",
+      "rating": "6",
+      "genre": "Action",
+      "id": 3
     }
   ]
 }

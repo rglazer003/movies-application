@@ -18,7 +18,8 @@ html, body {
 }
 
 body {
-    background-image: url("image/pineapplecut/pineapplecut.png")
+    background-image: url("image/pineapplecut/pineapplecut.png");
+    font-family: 'Staatliches', cursive;
 }
 
 input {
@@ -48,14 +49,18 @@ ul {
 
 .jumbotron h1 {
     text-align: center;
-    color: rgb(179, 179, 207);
+    color: rgb(204, 204, 204);
     background-color: rgba(6, 6, 41, 0.5);
+    font-family: 'Major Mono Display', monospace;
 }
 .jumbotron {
     background-image: url("image/movie_header.jpg");
     background-size: 100%;
 }
 
+input {
+    text-align: center;
+}
 
 
 /*.forms {*/

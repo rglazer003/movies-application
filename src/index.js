@@ -98,7 +98,7 @@ $('#submitId').on('click', function (e) {
         console.log(movie);
         $('#searchResult').html(`<h3>Title: ${movie.title}</h3><h3>Rating: ${movie.rating}</h3><h3>Genre: ${movie.genre}</h3>`)
     });
-    $('#editForm').removeClass('hidden')
+    $('#editForm').slideDown();
 });
 
 $('#movie-submit').on('click', function (e) {
