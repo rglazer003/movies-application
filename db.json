@@ -11,12 +11,6 @@
       "rating": "5",
       "id": 2,
       "genre": "Action"
-    },
-    {
-      "title": "Tesrt",
-      "rating": "7",
-      "genre": "Comedy",
-      "id": 3
     }
   ]
 }

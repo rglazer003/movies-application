@@ -19,7 +19,7 @@
             <br>
             <input type="text" id="genre" placeholder="Genre">
             <br>
-            <button id="add">Add Movie</button>
+            <button id="add" class="btn-dark">Add Movie</button>
             <br>
             <br>
             <input type="text" id="search" placeholder="Search by Title">
@@ -28,18 +28,20 @@
     <br>
     <div id="movieEdit" class="hidden">
         <input type="text" id="editId" placeholder="Enter ID of movie to edit">
-        <button id="submitId">Submit</button>
+        <button id="submitId" class="btn-dark">Submit</button>
     </div>
     <h1 id="yourMovie" class="hidden">Here is the movie:</h1>
     <div id="searchResult"></div>
     <form id="editForm" class="hidden">
         <input type="text" id="editTitle" placeholder="Enter new title">
         <input type="text" id="editRating" placeholder="Enter new rating">
-        <button id="movie-submit">Submit Movie</button>
+        <input type="text" id="editGenre" placeholder="Enter new genre">
+        <button id="movie-submit" class="btn-dark">Submit Movie</button>
     </form>
+    <br>
     <form id="deleteForm" class="hidden">
         <input type="text" id="deleteId" placeholder="Enter ID of movie to delete">
-        <button id="submitDelete">Delete</button>
+        <button id="submitDelete" class="btn-dark">Delete</button>
     </form>
     <br>
     <div class="container">
