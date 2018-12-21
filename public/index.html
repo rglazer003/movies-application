@@ -6,20 +6,23 @@
     <link rel="stylesheet" href="/style.css"/>
 </head>
 <body>
-    <div id="holder">
+<div id="holder">
     <div class="forms">
         <form class="forms hidden" id="add-movie">
             <input type="text" id="movie-name" placeholder="Movie Name">
             <br>
             <input type="text" id="rating" placeholder="Rating">
             <br>
+            <input type="text" id="genre" placeholder="Genre">
+            <br>
             <button id="add">Add Movie</button>
         </form>
     </div>
     <br>
     <div class="container">
-        <h1 id="loading">Loading...</h1>
+        <div class="loading"></div>
     </div>
+
     <div id="movieEdit" class="hidden">
         <input type="text" id="editId" placeholder="Enter ID of movie to edit">
         <button id="submitId">Submit</button>
@@ -35,9 +38,9 @@
         <input type="text" id="deleteId" placeholder="Enter ID of movie to delete">
         <button id="submitDelete">Delete</button>
     </form>
-    </div>
+</div>
 
 
-    <script src="/main.js"></script>
+<script src="/main.js"></script>
 </body>
 </html>

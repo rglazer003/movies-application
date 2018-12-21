@@ -11,13 +11,24 @@ const {getMovies, addMovies, getMovie, editMovie, deleteMovie} = require('./api.
 
 const $ = require('jquery');
 
+function renderMovies() {
+  $('.container').html('');
+  getMovies().then((movies) => {
+      movies.forEach(({title, rating, id}) => {
+          $('.container').append(`<h1>ID: ${id}</h1><h1>Title: ${title}</h1><h1>Rating: ${rating}</h1><hr>`)
+      })
+  })
+}
+
+
+
 getMovies().then((movies) => {
   console.log('Here are all the movies:');
-  movies.forEach(({title, rating, id}) => {
+  movies.forEach(({title, rating, id, genre}) => {
     console.log(`id#${id} - ${title} - rating: ${rating}`);
-    $('.container').append(`<h1>${id} ${title} ${rating}</h1>`)
+    $('.container').append(`<h1>ID: ${id}</h1><h1>Title: ${title}</h1><h1>Rating: ${rating}</h1><h1>Genre: ${genre}</h1><hr>`)
   });
-  $('#loading').addClass('hidden');
+  $('.loading').addClass('hidden');
   $('#add-movie').removeClass('hidden');
   $('#movieEdit').removeClass('hidden');
   $('#deleteForm').removeClass('hidden');
@@ -31,13 +42,15 @@ $('#add').on('click', function(e) {
   let movieName = $('#movie-name').val();
     console.log(movieName);
   let rating = $('#rating').val();
-  let newMovie = {title: movieName, rating: rating};
+  let genre = $('#genre').val();
+  let newMovie = {title: movieName, rating: rating, genre: genre};
   console.log(newMovie);
   addMovies(newMovie).then(function () {
       console.log('It worked')
   }).catch(function () {
       console.log('Shit')
-  })
+  });
+    renderMovies();
 });
 
 let id = 0;
@@ -46,7 +59,7 @@ $('#submitId').on('click', function (e) {
   id = $('#editId').val();
   getMovie(id).then((movie) => {
     console.log(movie);
-    $('#searchResult').html(`<h3>${movie.title}</h3><h3>${movie.rating}</h3>`)
+    $('#searchResult').html(`<h3>Title: ${movie.title}</h3><h3>Rating: ${movie.rating}</h3><h3>Genre: ${movie.genre}</h3>`)
   });
   $('#editForm').removeClass('hidden')
 });
@@ -60,6 +73,7 @@ $('#movie-submit').on('click', function(e) {
   console.log(movieData);
   editMovie(editId, movieData)
       .then(console.log('It worked')).catch(console.log('Did not work'))
+    renderMovies();
 });
 
 $('#submitDelete').on('click', function (e) {
@@ -67,5 +81,6 @@ $('#submitDelete').on('click', function (e) {
   let movieId = $('#deleteId').val();
   console.log(movieId);
   deleteMovie(movieId).then(console.log('It worked')).catch(console.log('Nope'))
+    renderMovies();
 });
 
