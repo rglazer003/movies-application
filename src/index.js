@@ -19,7 +19,7 @@ function renderMovies() {
     getMovies().then((movies) => {
         $('#deck').html('');
         movies.forEach(({title, rating, id, genre}) => {
-            $('#deck').append(`<div class="card"><div><ul class="list-group list-group-flush"><li>ID: ${id}</li><li>Title: ${title}</li><li>Rating: ${rating}</li><li>Genre: ${genre}</li><li><button class="btn-dark delete" value="${id}">TEST</button></li></ul></div></div>`)
+            $('#deck').append(`<div class="card"><div><ul class="list-group list-group-flush"><li>ID: ${id}</li><li>Title: ${title}</li><li>Rating: ${rating}</li><li>Genre: ${genre}</li><li><button class="btn-dark delete" value="${id}">DELETE</button></li></ul></div></div>`)
         });
     })
 }
@@ -48,7 +48,7 @@ function searchMovies(e) {
     console.log(searchArray);
     $('#deck').html('');
     searchArray.forEach(({title, rating, id, genre}) => {
-        $('#deck').append(`<div class="card"><div><ul class="list-group list-group-flush"><li>ID: ${id}</li><li>Title: ${title}</li><li>Rating: ${rating}</li><li>Genre: ${genre}</li><li><button class="btn-dark delete" value="${id}">TEST</button></li><</ul></div></div>`)
+        $('#deck').append(`<div class="card"><div><ul class="list-group list-group-flush"><li>ID: ${id}</li><li>Title: ${title}</li><li>Rating: ${rating}</li><li>Genre: ${genre}</li><li><button class="btn-dark delete" value="${id}">DELETE</button></li><</ul></div></div>`)
     })
 
 
@@ -58,7 +58,7 @@ getMovies().then((movies) => {
     console.log('Here are all the movies:');
     movies.forEach(({title, rating, id, genre}) => {
         console.log(`id#${id} - ${title} - rating: ${rating}`);
-        $('#deck').append(`<div class="card"><div><ul class="list-group list-group-flush"><li>ID: ${id}</li><li>Title: ${title}</li><li>Rating: ${rating}</li><li>Genre: ${genre}</li><li><button class="btn-dark delete" value="${id}">TEST</button></li></ul></div></div>`)
+        $('#deck').append(`<div class="card"><div><ul class="list-group list-group-flush"><li>ID: ${id}</li><li>Title: ${title}</li><li>Rating: ${rating}</li><li>Genre: ${genre}</li><li><button class="btn-dark delete" value="${id}">DELETE</button></li></ul></div></div>`)
     });
     $('.loading').addClass('hidden');
     $('#add-movie').removeClass('hidden');
